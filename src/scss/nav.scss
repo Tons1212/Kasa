@@ -1,11 +1,11 @@
 .navBar {
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items:baseline;
+    align-items: center;
+    padding: 1.5em 4em;
     .navBarLink {
         display: flex;
-        align-items: center;
+        width: 20%;
+        gap: 35px;        
     }   
 }

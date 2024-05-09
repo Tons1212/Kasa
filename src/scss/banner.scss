@@ -1,0 +1,21 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 1.5em 4em;
+    img {
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
+        max-height: 180px;
+        border-radius: 20px;
+    }
+    h1 {
+        position: absolute;
+        color: white;
+        padding-top: 35px;
+        font-size: 40px;
+        font-weight: 600;
+    }
+}

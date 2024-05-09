@@ -1,0 +1,35 @@
+.rentalsGrid {
+    background-color: #F6F6F6;
+    min-height: 500px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 30px 25px;
+    flex-wrap: wrap;
+    gap: 2em;    
+    margin-inline: 4em;
+    .rental {
+        background-color: $mainColor;
+        border-radius: 10px;
+        flex-basis: 30%;
+        display: grid;
+        align-items: end;
+        .rentalTitle{
+            color: white;
+            font-weight: 600;
+            margin: 13px;
+            width: 30%;
+        }
+    }
+}
+
+@media screen and (width <= 850px) {
+    .rentalsGrid {
+        background-color: white;
+        .rental {
+            min-width: 110%;
+            min-height: 250px;
+        }
+    }
+}
+    
