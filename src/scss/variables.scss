@@ -1,1 +1,31 @@
-$mainColor: #FF6060;
+$mainColor: linear-gradient(to top, #b33e3e, #ff6060);
+$secondColor:  #ff6060;
+$whiteBackground: white;
+$blackBackground: black;
+$greyBackground: #F6F6F6;
+$darkGrey: #C4C4C4;
+$greyStars: #E3E3E3;
+
+@mixin padding {
+    padding: 1.5em 4em;
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(-100%);
+        opacity: -1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

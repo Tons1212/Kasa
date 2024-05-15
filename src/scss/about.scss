@@ -1,0 +1,45 @@
+.aboutBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include padding;
+    img {
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.8);
+        max-height: 220px;
+        border-radius: 20px;
+        margin-bottom: 50px;
+    }
+}
+.aboutDesc {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    margin-bottom: 30px;
+    & .aboutDescTitle {
+        display: flex;
+        justify-content: space-between;
+        font-size: 23px;
+        font-weight: 700;
+        background-color: $secondColor;
+        padding: 0.5em;
+        align-items: center;
+        border-radius: 5px;
+        color: $whiteBackground; 
+        & i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    & p {
+        background-color: $greyBackground;
+        padding: 0.5em;
+        border-radius: 10px;
+        position: relative;
+        top: -1.2em;
+        z-index: -1;
+        animation: slideOut 0.3s ease-in-out both;
+    }
+}

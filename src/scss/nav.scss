@@ -2,10 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5em 4em;
+    @include padding;
+    & a:hover, & .active {
+        text-decoration: underline;
+      }
     .navBarLink {
         display: flex;
-        width: 20%;
-        gap: 35px;        
-    }   
+        gap: 35px; 
+        font-weight: 500; 
+        font-size: 22px;      
+    }
 }

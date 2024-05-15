@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-function Rental() {
+function Rental(props) {
   return (
-    <div className="rental">
-      <p className="rentalTitle">Titre de la location</p>
-    </div>
+    <NavLink to={`/rental/${props.id}`}>
+      <div className="rental">
+        <img src={props.coverImage} alt="dfskj" />
+        <p className="rentalTitle">{props.title}</p>
+      </div>
+    </NavLink>
   );
 }
 

@@ -1,21 +1,41 @@
+@keyframes slideOut {
+  0% {
+    transform: translateY(-100%);
+    opacity: -1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5em 4em;
 }
+.navBar a:hover, .navBar .active {
+  text-decoration: underline;
+}
 .navBar .navBarLink {
   display: flex;
-  width: 20%;
   gap: 35px;
+  font-weight: 500;
+  font-size: 22px;
 }
 
 .banner {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding: 1.5em 4em;
+  padding: 1em 4em 2.5em;
 }
 .banner img {
   width: 100%;
@@ -36,33 +56,44 @@
   background-color: #F6F6F6;
   min-height: 500px;
   border-radius: 20px;
-  display: flex;
   justify-content: center;
   padding: 30px 25px;
-  flex-wrap: wrap;
   gap: 2em;
   margin-inline: 4em;
+  display: grid;
+  grid-template-columns: 0.4fr 0.4fr 0.4fr;
+}
+.rentalsGrid img {
+  width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: brightness(90%);
 }
 .rentalsGrid .rental {
-  background-color: #FF6060;
-  border-radius: 10px;
-  flex-basis: 30%;
-  display: grid;
+  display: flex;
   align-items: end;
+  position: relative;
 }
 .rentalsGrid .rental .rentalTitle {
+  position: absolute;
   color: white;
   font-weight: 600;
   margin: 13px;
-  width: 30%;
+  width: 20%;
 }
 
 @media screen and (width <= 850px) {
   .rentalsGrid {
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1em;
+    margin: 0;
   }
   .rentalsGrid .rental {
-    min-width: 110%;
+    min-width: 100%;
     min-height: 250px;
   }
 }
@@ -84,6 +115,288 @@
   color: white;
 }
 
+.errorTitle {
+  display: flex;
+  justify-content: center;
+  color: #ff6060;
+  font-size: 400px;
+  margin: 5vh 0;
+}
+
+.errorText {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  margin: auto;
+  color: #ff6060;
+}
+
+.homeReturn {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 150px 0;
+}
+.homeReturn:hover {
+  text-decoration: underline;
+}
+
+.rentalPage {
+  color: #ff6060;
+  padding: 1.5em 4em;
+}
+
+.rentDescHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.rentalDesc {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.rentalDesc .rentalDescTitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #ff6060;
+  padding: 0.7em;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+}
+.rentalDesc .rentalDescTitle i {
+  font-size: 30px;
+  cursor: pointer;
+}
+.rentalDesc p {
+  background-color: #F6F6F6;
+  color: black;
+  padding: 0.8em;
+  border-radius: 10px;
+  position: relative;
+  top: -1.2em;
+  z-index: -1;
+  animation: slideOut 0.3s ease-in-out both;
+}
+
+.rentalEquipements {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.rentalEquipements .rentalEquipementsTitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #ff6060;
+  padding: 0.7em;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+}
+.rentalEquipements .rentalEquipementsTitle i {
+  font-size: 30px;
+  cursor: pointer;
+}
+.rentalEquipements p {
+  background-color: #F6F6F6;
+  color: black;
+  padding: 0.8em;
+  border-radius: 10px;
+  position: relative;
+  top: -1.2em;
+  z-index: -1;
+  animation: slideOut 0.3s forwards;
+}
+.rentalEquipements p li {
+  list-style: none;
+}
+
+@media screen and (width <= 850px) {
+  .rentDescHeader {
+    flex-direction: column;
+  }
+  .rentDescHeader .rentalDesc, .rentDescHeader .rentalEquipements {
+    width: 100%;
+  }
+}
+.rentalHeader {
+  display: flex;
+}
+.rentalHeader .rentalTitle {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: black;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+.rentalTags {
+  display: flex;
+  gap: 1em;
+  text-align: center;
+}
+.rentalTags span {
+  background-color: #ff6060;
+  color: white;
+  font-weight: 700;
+  padding: 0.5em 2.5em;
+  border-radius: 10px;
+}
+
+.rentalOwnerDetails {
+  margin-left: auto;
+  width: 15%;
+}
+.rentalOwnerDetails .rentalOwner {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  text-align: end;
+  gap: 10px;
+  margin-top: 30px;
+}
+.rentalOwnerDetails .rentalOwner h3 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.rentalOwnerPic img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #C4C4C4;
+}
+
+.rentalOwnerRating {
+  display: flex;
+  justify-content: end;
+  font-size: 26px;
+  gap: 15px;
+  margin-top: 20px;
+  color: #E3E3E3;
+}
+.rentalOwnerRating .on {
+  color: #ff6060;
+}
+
+@media screen and (width <= 850px) {
+  .rentalHeader {
+    flex-direction: column;
+  }
+  .rentalHeader .rentalTitle {
+    margin-bottom: 0;
+  }
+  .rentalHeader .rentalOwnerDetails {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .rentalHeader .rentalOwnerDetails .rentalOwnerRating {
+    margin-right: auto;
+  }
+}
+.aboutBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5em 4em;
+}
+.aboutBanner img {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  max-height: 220px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.aboutDesc {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  margin-bottom: 30px;
+}
+.aboutDesc .aboutDescTitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 23px;
+  font-weight: 700;
+  background-color: #ff6060;
+  padding: 0.5em;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+}
+.aboutDesc .aboutDescTitle i {
+  font-size: 30px;
+  cursor: pointer;
+}
+.aboutDesc p {
+  background-color: #F6F6F6;
+  padding: 0.5em;
+  border-radius: 10px;
+  position: relative;
+  top: -1.2em;
+  z-index: -1;
+  animation: slideOut 0.3s ease-in-out both;
+}
+
+.rentalBanner {
+  position: relative;
+  width: 100%;
+  height: 31rem;
+}
+.rentalBanner .chevron {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  color: white;
+  font-size: 120px;
+  cursor: pointer;
+}
+.rentalBanner .fa-chevron-left {
+  top: 1.5em;
+  left: 0.2em;
+  z-index: 1;
+}
+.rentalBanner .fa-chevron-right {
+  top: 1.5em;
+  right: 0.2em;
+  z-index: 1;
+}
+.rentalBanner img {
+  object-fit: cover;
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  max-height: 500px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.rentalBanner img.visible {
+  opacity: 1;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -93,6 +406,18 @@ body {
 a {
   color: black;
   text-decoration: none;
+}
+
+@media screen and (width <= 850px) {
+  .navBar {
+    padding: 1em 1em;
+  }
+  .banner {
+    padding: 1em 1em;
+  }
+  .rentalPage {
+    padding: 1em 1em;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

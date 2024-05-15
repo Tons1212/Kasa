@@ -3,6 +3,12 @@
 @import "banner";
 @import "rentalsGrid";
 @import "footer";
+@import "errorPage";
+@import "rentalPage";
+@import "rentalDesc";
+@import "rentalDetails";
+@import "about";
+@import "rentalBanner";
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -13,4 +19,16 @@ body {
   a {
     color: black;
     text-decoration: none;
+  }
+
+  @media screen and (width <= 850px) {
+    .navBar {
+      padding: 1em 1em;
+    }
+    .banner {
+      padding: 1em 1em;
+    }
+    .rentalPage {
+      padding: 1em 1em;
+    }
   }

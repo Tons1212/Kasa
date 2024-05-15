@@ -1,0 +1,77 @@
+.rentDescHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.rentalDesc {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    & .rentalDescTitle {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: $secondColor;
+        padding: 0.7em;
+        align-items: center;
+        border-radius: 10px;
+        color: $whiteBackground; 
+        & i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    & p {
+        background-color: $greyBackground;
+        color: $blackBackground;
+        padding: 0.8em;
+        border-radius: 10px;
+        position: relative;
+        top: -1.2em;
+        z-index: -1;
+        animation: slideOut 0.3s ease-in-out both;
+    }
+}
+.rentalEquipements {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    & .rentalEquipementsTitle {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: $secondColor;
+        padding: 0.7em;
+        align-items: center;
+        border-radius: 10px;
+        color: $whiteBackground; 
+        & i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    & p {
+        background-color: $greyBackground;
+        color: $blackBackground;
+        padding: 0.8em;
+        border-radius: 10px;
+        position: relative;
+        top: -1.2em;
+        z-index: -1;
+        animation: slideOut 0.3s forwards;
+        li {
+            list-style: none;
+        }
+    }
+}
+
+@media screen and (width <= 850px) {
+    .rentDescHeader {
+        flex-direction: column;
+        .rentalDesc, .rentalEquipements {
+            width: 100%;
+        }
+    }
+}
