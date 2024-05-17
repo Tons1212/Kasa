@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/main.css';
 import RentalDesc from '../Components/RentalDesc';
-import RentalBanner from '../Components/RentalBanner';
+import Carroussel from '../Components/Carroussel';
 import RentalDetails from '../Components/RentalDetails';
 import { useParams } from 'react-router-dom';
 
@@ -10,10 +10,10 @@ function RentalPage() {
   const [choosenRental, setChoosenRental] = useState(null);
   useEffect(() => {
     fetchRentalData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function fetchRentalData() {
-    console.log('toto');
     fetch('/rentals.json')
       .then((res) => res.json())
       .then((rentals) => {
@@ -25,14 +25,12 @@ function RentalPage() {
   if (choosenRental == null) return <div>...loading</div>;
   return (
     <div className="rentalPage">
-      <RentalBanner rentalPics={choosenRental.pictures} />
+      <Carroussel rentalPics={choosenRental.pictures} />
       <RentalDetails rental={choosenRental} />
       <RentalDesc
         description={choosenRental.description}
         equipments={choosenRental.equipments.map((equipment, i) => (
-          <ul key={i}>
-            <li>{equipment}</li>
-          </ul>
+          <li key={i}>{equipment}</li>
         ))}
       />
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Rental from './Rental.js';
+import Rental from './RentalCard.js';
 
 function RentalsGrid() {
   const [rentals, setRentals] = useState([]);

@@ -2,9 +2,9 @@ import React from 'react';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import HomePage from './HomePage';
 import Navbar from './Components/Navbar';
-import About from './Pages/About';
+import About from './Pages/AboutPage';
 import Footer from './Components/Footer';
-import ErrorPage from './Components/ErrorPage';
+import ErrorPage from './Pages/ErrorPage';
 import RentalPage from './Pages/RentalPage';
 
 const HeaderFooterLayout = () => {

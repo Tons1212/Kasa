@@ -8,7 +8,7 @@
 @import "rentalDesc";
 @import "rentalDetails";
 @import "about";
-@import "rentalBanner";
+@import "carroussel";
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -21,14 +21,8 @@ body {
     text-decoration: none;
   }
 
-  @media screen and (width <= 850px) {
-    .navBar {
-      padding: 1em 1em;
-    }
-    .banner {
-      padding: 1em 1em;
-    }
-    .rentalPage {
+  @media screen and (max-width: 768px) {
+    .navBar, .banner, .rentalPage, .aboutBanner, .errorPage {
       padding: 1em 1em;
     }
   }

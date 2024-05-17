@@ -1,14 +1,28 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function AboutDesc() {
+function Collapse() {
   const [isOpen, setIsOpen] = useState(Array(4).fill(false));
 
-  const toggleOpen = (index) => {
-    const updatedOpen = [...isOpen];
-    updatedOpen[index] = !updatedOpen[index];
-    setIsOpen(updatedOpen);
-  };
+  useEffect(() => {
+    const titles = document.querySelectorAll('.aboutDescTitle i');
+
+    const onClick = (i) => {
+      const updatedOpen = [...isOpen];
+      updatedOpen[i] = !updatedOpen[i];
+      setIsOpen(updatedOpen);
+    };
+
+    titles.forEach((title, i) => {
+      title.addEventListener('click', () => onClick(i));
+    });
+
+    return () => {
+      titles.forEach((title, i) => {
+        title.removeEventListener('click', () => onClick(i));
+      });
+    };
+  }, [isOpen]);
 
   const aboutSections = [
     {
@@ -37,10 +51,12 @@ function AboutDesc() {
     <div>
       {aboutSections.map((section, index) => (
         <div key={index} className="aboutDesc">
-          <span className="aboutDescTitle" onClick={() => toggleOpen(index)}>
+          <span className="aboutDescTitle">
             {section.title}
             <i
-              className={`fa-solid fa-chevron-${isOpen[index] ? 'down' : 'up'}`}
+              className={`fa-solid fa-chevron-${
+                isOpen[index] ? `down` : `up`
+              } ${isOpen[index] ? `open` : ``}`}
             ></i>
           </span>
           {isOpen[index] && <p>{section.content}</p>}
@@ -50,4 +66,4 @@ function AboutDesc() {
   );
 }
 
-export default AboutDesc;
+export default Collapse;

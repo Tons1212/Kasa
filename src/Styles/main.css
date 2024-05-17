@@ -32,26 +32,44 @@
   font-size: 22px;
 }
 
+@media screen and (max-width: 768px) {
+  .navBar img {
+    height: 55px;
+  }
+  .navBar .navBarLink {
+    font-size: 20px;
+  }
+}
 .banner {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 1em 4em 2.5em;
 }
 .banner img {
   width: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
-  max-height: 180px;
+  filter: brightness(0.4);
+  max-height: 220px;
   border-radius: 20px;
 }
 .banner h1 {
   position: absolute;
   color: white;
-  padding-top: 35px;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 600;
+  margin-top: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .banner > h1 {
+    font-size: 35px;
+    padding: 1em;
+  }
+  .banner img {
+    max-height: 180px;
+  }
+}
 .rentalsGrid {
   background-color: #F6F6F6;
   min-height: 500px;
@@ -84,7 +102,7 @@
   width: 20%;
 }
 
-@media screen and (width <= 850px) {
+@media screen and (max-width: 768px) {
   .rentalsGrid {
     background-color: white;
     display: flex;
@@ -97,6 +115,11 @@
     min-height: 250px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .rentalsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .footer {
   height: 180px;
   background-color: black;
@@ -104,31 +127,41 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 40px;
   width: 100%;
   gap: 20px;
 }
 .footer img {
-  width: 120px;
+  width: 150px;
 }
 .footer p {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-block: 2em;
+    gap: 0;
+  }
+  .footer p {
+    width: 30%;
+  }
+}
 .errorTitle {
   display: flex;
   justify-content: center;
   color: #ff6060;
   font-size: 400px;
-  margin: 5vh 0;
+  margin: 50px;
+  font-weight: 700;
 }
 
 .errorText {
   font-size: 40px;
   display: flex;
   justify-content: center;
+  text-align: center;
+  margin-top: 4em;
   font-weight: 500;
-  margin: auto;
   color: #ff6060;
 }
 
@@ -138,11 +171,18 @@
   font-weight: 500;
   font-size: 24px;
   margin: 150px 0;
-}
-.homeReturn:hover {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 900px) {
+  .errorTitle {
+    font-size: 180px;
+  }
+  .errorText {
+    font-size: 28px;
+    padding-inline: 1px;
+  }
+}
 .rentalPage {
   color: #ff6060;
   padding: 1.5em 4em;
@@ -173,6 +213,7 @@
 .rentalDesc .rentalDescTitle i {
   font-size: 30px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 .rentalDesc p {
   background-color: #F6F6F6;
@@ -182,7 +223,8 @@
   position: relative;
   top: -1.2em;
   z-index: -1;
-  animation: slideOut 0.3s ease-in-out both;
+  animation: slideOut 0.3s ease-in-out;
+  margin-bottom: 0;
 }
 
 .rentalEquipements {
@@ -200,10 +242,15 @@
   align-items: center;
   border-radius: 10px;
   color: white;
+  transition: transform 2s ease-in-out;
+}
+.rentalEquipements .rentalEquipementsTitle:active i {
+  transform: rotate(180deg);
 }
 .rentalEquipements .rentalEquipementsTitle i {
   font-size: 30px;
   cursor: pointer;
+  transition: transform 1s ease-in-out;
 }
 .rentalEquipements p {
   background-color: #F6F6F6;
@@ -214,12 +261,13 @@
   top: -1.2em;
   z-index: -1;
   animation: slideOut 0.3s forwards;
+  margin-bottom: 0;
 }
 .rentalEquipements p li {
   list-style: none;
 }
 
-@media screen and (width <= 850px) {
+@media screen and (width <= 768px) {
   .rentDescHeader {
     flex-direction: column;
   }
@@ -249,6 +297,7 @@ h2 {
 
 .rentalTags {
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
   text-align: center;
 }
@@ -297,21 +346,32 @@ h2 {
   color: #ff6060;
 }
 
-@media screen and (width <= 850px) {
+@media screen and (max-width: 768px) {
   .rentalHeader {
     flex-direction: column;
   }
   .rentalHeader .rentalTitle {
     margin-bottom: 0;
+    margin-top: 15px;
+  }
+  .rentalHeader .rentalTitle h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .rentalHeader .rentalTitle h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
   }
   .rentalHeader .rentalOwnerDetails {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    width: 100%;
   }
-  .rentalHeader .rentalOwnerDetails .rentalOwnerRating {
-    margin-right: auto;
+  .rentalHeader .rentalOwnerDetails .rentalOwner {
+    width: 15%;
   }
 }
 .aboutBanner {
@@ -361,42 +421,71 @@ h2 {
   animation: slideOut 0.3s ease-in-out both;
 }
 
-.rentalBanner {
+@media screen and (max-width: 768px) {
+  .aboutBanner img {
+    max-height: 180px;
+  }
+  .aboutDesc {
+    width: 100%;
+  }
+}
+.carroussel {
   position: relative;
   width: 100%;
-  height: 31rem;
+  min-height: 31rem;
 }
-.rentalBanner .chevron {
+.carroussel .carrousselCounter {
+  position: absolute;
+  color: white;
+  bottom: 3%;
+  left: 48%;
+  font-size: 16px;
+}
+.carroussel .chevron {
   background-color: transparent;
   border: none;
   position: absolute;
+  top: 37%;
   color: white;
   font-size: 120px;
   cursor: pointer;
 }
-.rentalBanner .fa-chevron-left {
-  top: 1.5em;
+.carroussel .fa-chevron-left {
   left: 0.2em;
   z-index: 1;
 }
-.rentalBanner .fa-chevron-right {
-  top: 1.5em;
+.carroussel .fa-chevron-right {
   right: 0.2em;
-  z-index: 1;
 }
-.rentalBanner img {
+.carroussel img {
   object-fit: cover;
   position: absolute;
   border-radius: 20px;
   width: 100%;
   max-height: 500px;
+  min-height: 340px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.rentalBanner img.visible {
+.carroussel img.visible {
   opacity: 1;
 }
 
+@media screen and (max-width: 850px) {
+  .carroussel {
+    min-height: 20em;
+  }
+  .carroussel .chevron {
+    font-size: 40px;
+    top: 45%;
+  }
+  .carroussel img {
+    max-height: 340px;
+  }
+  .carrousselCounter {
+    opacity: 0;
+  }
+}
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -408,14 +497,8 @@ a {
   text-decoration: none;
 }
 
-@media screen and (width <= 850px) {
-  .navBar {
-    padding: 1em 1em;
-  }
-  .banner {
-    padding: 1em 1em;
-  }
-  .rentalPage {
+@media screen and (max-width: 768px) {
+  .navBar, .banner, .rentalPage, .aboutBanner, .errorPage {
     padding: 1em 1em;
   }
 }

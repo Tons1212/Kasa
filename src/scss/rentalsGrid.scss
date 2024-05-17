@@ -30,7 +30,7 @@
     }
 }
 
-@media screen and (width <= 850px) {
+@media screen and (max-width: 768px) {
     .rentalsGrid {
         background-color: $whiteBackground;
         display: flex;
@@ -41,6 +41,13 @@
             min-width: 100%;
             min-height: 250px;
         }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .rentalsGrid {
+        grid-template-columns: 1fr 1fr;
     }
 }
     

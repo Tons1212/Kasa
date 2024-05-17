@@ -1,19 +1,30 @@
 .banner {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1em 4em 2.5em;
     img {
         width: 100%;
         object-fit: cover;
-        filter: brightness(0.5);
-        max-height: 180px;
+        filter: brightness(0.4);
+        max-height: 220px;
         border-radius: 20px;
     }
     h1 {
         position: absolute;
         color: $whiteBackground;
-        padding-top: 35px;
-        font-size: 40px;
+        font-size: 45px;
         font-weight: 600;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner > h1 {
+        font-size: 35px;
+        padding: 1em;
+    }
+    .banner img {
+        max-height: 180px;
     }
 }
