@@ -99,7 +99,7 @@
   color: white;
   font-weight: 600;
   margin: 13px;
-  width: 20%;
+  width: 50%;
 }
 
 @media screen and (max-width: 768px) {
@@ -325,6 +325,7 @@ h2 {
   display: flex;
   flex-direction: column;
   font-weight: 500;
+  padding-left: 10em;
 }
 
 .rentalOwnerPic img {

@@ -30,9 +30,11 @@ function Carroussel(props) {
       {length > 1 && (
         <i onClick={nextPic} className="chevron fa-solid fa-chevron-right"></i>
       )}
-      <div className="carrousselCounter">
-        {currentPic + 1} / {pictures.length}
-      </div>
+      {length > 1 && (
+        <div className="carrousselCounter">
+          {currentPic + 1} / {pictures.length}
+        </div>
+      )}
     </div>
   );
 }
