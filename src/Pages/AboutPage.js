@@ -1,7 +1,7 @@
 import React from 'react';
 import Collapse from '../Components/Collapse';
 
-function About() {
+function AboutPage() {
   return (
     <div className="aboutBanner">
       <img src="mountains.png" alt="Vue vallée montagneuse" />
@@ -10,4 +10,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;

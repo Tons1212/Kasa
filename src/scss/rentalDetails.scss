@@ -31,13 +31,13 @@ h2 {
 .rentalOwnerDetails {
     margin-left: auto;
     width: 15%;
+    margin-top: 30px;
     .rentalOwner {
         display: flex;
         align-items: center;
         justify-content: end;
         text-align: end;
         gap: 10px;
-        margin-top: 30px;
     }
     .rentalOwner h3{
         display: flex;
@@ -47,8 +47,7 @@ h2 {
     }
 }
 .rentalOwnerPic img {
-    height: 60px;
-    width: 60px;
+    width: 55px;
     border-radius: 50%;
     background-color: $darkGrey;
 }
@@ -57,7 +56,6 @@ h2 {
     justify-content: end;
     font-size: 26px;
     gap: 15px;
-    margin-top: 20px;
     color: $greyStars;
     .on {
         color: $secondColor;
@@ -78,16 +76,23 @@ h2 {
                 font-size: 20px;
                 margin-bottom: 20px;
             }
+            .rentalTags span {
+            padding: 0.4em 2.2em;
+            }
         }
         .rentalOwnerDetails {
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin: 10px 0 10px;
             width: 100%;
             .rentalOwner {
                 width: 15%;
+            }
+            .rentalOwnerRating {
+                font-size: 20px;
+                gap: 8px;
             }
         }
     }

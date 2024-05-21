@@ -22,17 +22,22 @@ function RentalPage() {
       })
       .catch(console.error);
   }
-  if (choosenRental == null) return <div>...loading</div>;
   return (
     <div className="rentalPage">
-      <Carroussel rentalPics={choosenRental.pictures} />
-      <RentalDetails rental={choosenRental} />
-      <RentalDesc
-        description={choosenRental.description}
-        equipments={choosenRental.equipments.map((equipment, i) => (
-          <li key={i}>{equipment}</li>
-        ))}
-      />
+      {choosenRental == null ? (
+        <div>...Loading</div>
+      ) : (
+        <>
+          <Carroussel rentalPics={choosenRental.pictures} />
+          <RentalDetails rental={choosenRental} />
+          <RentalDesc
+            description={choosenRental.description}
+            equipments={choosenRental.equipments.map((equipment, i) => (
+              <li key={i}>{equipment}</li>
+            ))}
+          />
+        </>
+      )}
     </div>
   );
 }

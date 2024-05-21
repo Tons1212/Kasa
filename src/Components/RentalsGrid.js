@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Rental from './RentalCard.js';
+import RentalCard from './RentalCard.js';
 
 function RentalsGrid() {
   const [rentals, setRentals] = useState([]);
@@ -13,7 +13,7 @@ function RentalsGrid() {
   return (
     <div className="rentalsGrid">
       {rentals.map((rental, i) => (
-        <Rental
+        <RentalCard
           key={i}
           title={rental.title}
           coverImage={rental.cover}

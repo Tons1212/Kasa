@@ -2,12 +2,14 @@
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    margin-bottom: 25px;
 }
-.rentalDesc {
+
+.rentalDescAndEquip {
     display: flex;
     flex-direction: column;
     width: 45%;
-    & .rentalDescTitle {
+    & .rentalDescAndEquipTitle {
         display: flex;
         justify-content: space-between;
         font-size: 18px;
@@ -15,44 +17,9 @@
         background-color: $secondColor;
         padding: 0.7em;
         align-items: center;
-        border-radius: 10px;
-        color: $whiteBackground; 
-        & i {
-            font-size: 30px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-    }
-    & p {
-        background-color: $greyBackground;
-        color: $blackBackground;
-        padding: 0.8em;
-        border-radius: 10px;
-        position: relative;
-        top: -1.2em;
-        z-index: -1;
-        animation: slideOut 0.3s ease-in-out;
-        margin-bottom: 0;
-    }
-}
-.rentalEquipements {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    & .rentalEquipementsTitle {
-        display: flex;
-        justify-content: space-between;
-        font-size: 18px;
-        font-weight: 700;
-        background-color: $secondColor;
-        padding: 0.7em;
-        align-items: center;
-        border-radius: 10px;
+        border-radius: 8px;
         color: $whiteBackground; 
         transition: transform 2s ease-in-out;
-        &:active i {
-            transform: rotate(180deg);
-        }
         & i {
             font-size: 30px;
             cursor: pointer;
@@ -63,7 +30,7 @@
         background-color: $greyBackground;
         color: $blackBackground;
         padding: 0.8em;
-        border-radius: 10px;
+        border-radius: 8px;
         position: relative;
         top: -1.2em;
         z-index: -1;
@@ -78,8 +45,11 @@
 @media screen and (width <= 768px) {
     .rentDescHeader {
         flex-direction: column;
-        .rentalDesc, .rentalEquipements {
+        .rentalDescAndEquip {
             width: 100%;
+            .rentalDescAndEquipTitle {
+                padding: 0.4em;
+            }
         }
     }
 }

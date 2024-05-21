@@ -12,12 +12,15 @@
         margin-bottom: 50px;
     }
 }
-.aboutDesc {
+.aboutCollapse {
     display: flex;
     flex-direction: column;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+.aboutDesc {
     margin: auto;
     width: 80%;
-    margin-bottom: 30px;
     & .aboutDescTitle {
         display: flex;
         justify-content: space-between;
@@ -41,6 +44,7 @@
         top: -1.2em;
         z-index: -1;
         animation: slideOut 0.3s ease-in-out both;
+        margin-bottom: -10px;
     }
 }
 
@@ -50,5 +54,12 @@
     }
     .aboutDesc {
         width: 100%;
+        & .aboutDescTitle {
+            font-size: 18px;
+            padding: 0.4em;
+            & i {
+                font-size: 24px;
+            }
+        }
     }
 }

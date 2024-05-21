@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import Navbar from './Components/Navbar';
-import About from './Pages/AboutPage';
+import AboutPage from './Pages/AboutPage';
 import Footer from './Components/Footer';
 import ErrorPage from './Pages/ErrorPage';
 import RentalPage from './Pages/RentalPage';
@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />,
+        element: <AboutPage />,
       },
     ],
   },

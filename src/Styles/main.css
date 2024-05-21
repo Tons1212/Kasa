@@ -27,17 +27,18 @@
 }
 .navBar .navBarLink {
   display: flex;
-  gap: 35px;
+  gap: 65px;
   font-weight: 500;
   font-size: 22px;
 }
 
 @media screen and (max-width: 768px) {
   .navBar img {
-    height: 55px;
+    height: 50px;
   }
   .navBar .navBarLink {
-    font-size: 20px;
+    font-size: 18px;
+    gap: 25px;
   }
 }
 .banner {
@@ -139,7 +140,7 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    padding-block: 2em;
+    padding-block: 3.4em;
     gap: 0;
   }
   .footer p {
@@ -176,7 +177,7 @@
 
 @media screen and (max-width: 900px) {
   .errorTitle {
-    font-size: 180px;
+    font-size: 130px;
   }
   .errorText {
     font-size: 28px;
@@ -192,14 +193,15 @@
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  margin-bottom: 25px;
 }
 
-.rentalDesc {
+.rentalDescAndEquip {
   display: flex;
   flex-direction: column;
   width: 45%;
 }
-.rentalDesc .rentalDescTitle {
+.rentalDescAndEquip .rentalDescAndEquipTitle {
   display: flex;
   justify-content: space-between;
   font-size: 18px;
@@ -207,63 +209,27 @@
   background-color: #ff6060;
   padding: 0.7em;
   align-items: center;
-  border-radius: 10px;
-  color: white;
-}
-.rentalDesc .rentalDescTitle i {
-  font-size: 30px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-.rentalDesc p {
-  background-color: #F6F6F6;
-  color: black;
-  padding: 0.8em;
-  border-radius: 10px;
-  position: relative;
-  top: -1.2em;
-  z-index: -1;
-  animation: slideOut 0.3s ease-in-out;
-  margin-bottom: 0;
-}
-
-.rentalEquipements {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-}
-.rentalEquipements .rentalEquipementsTitle {
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: 700;
-  background-color: #ff6060;
-  padding: 0.7em;
-  align-items: center;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   transition: transform 2s ease-in-out;
 }
-.rentalEquipements .rentalEquipementsTitle:active i {
-  transform: rotate(180deg);
-}
-.rentalEquipements .rentalEquipementsTitle i {
+.rentalDescAndEquip .rentalDescAndEquipTitle i {
   font-size: 30px;
   cursor: pointer;
   transition: transform 1s ease-in-out;
 }
-.rentalEquipements p {
+.rentalDescAndEquip p {
   background-color: #F6F6F6;
   color: black;
   padding: 0.8em;
-  border-radius: 10px;
+  border-radius: 8px;
   position: relative;
   top: -1.2em;
   z-index: -1;
   animation: slideOut 0.3s forwards;
   margin-bottom: 0;
 }
-.rentalEquipements p li {
+.rentalDescAndEquip p li {
   list-style: none;
 }
 
@@ -271,8 +237,11 @@
   .rentDescHeader {
     flex-direction: column;
   }
-  .rentDescHeader .rentalDesc, .rentDescHeader .rentalEquipements {
+  .rentDescHeader .rentalDescAndEquip {
     width: 100%;
+  }
+  .rentDescHeader .rentalDescAndEquip .rentalDescAndEquipTitle {
+    padding: 0.4em;
   }
 }
 .rentalHeader {
@@ -312,6 +281,7 @@ h2 {
 .rentalOwnerDetails {
   margin-left: auto;
   width: 15%;
+  margin-top: 30px;
 }
 .rentalOwnerDetails .rentalOwner {
   display: flex;
@@ -319,7 +289,6 @@ h2 {
   justify-content: end;
   text-align: end;
   gap: 10px;
-  margin-top: 30px;
 }
 .rentalOwnerDetails .rentalOwner h3 {
   display: flex;
@@ -329,8 +298,7 @@ h2 {
 }
 
 .rentalOwnerPic img {
-  height: 60px;
-  width: 60px;
+  width: 55px;
   border-radius: 50%;
   background-color: #C4C4C4;
 }
@@ -340,7 +308,6 @@ h2 {
   justify-content: end;
   font-size: 26px;
   gap: 15px;
-  margin-top: 20px;
   color: #E3E3E3;
 }
 .rentalOwnerRating .on {
@@ -363,16 +330,23 @@ h2 {
     font-size: 20px;
     margin-bottom: 20px;
   }
+  .rentalHeader .rentalTitle .rentalTags span {
+    padding: 0.4em 2.2em;
+  }
   .rentalHeader .rentalOwnerDetails {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px 0 10px;
     width: 100%;
   }
   .rentalHeader .rentalOwnerDetails .rentalOwner {
     width: 15%;
+  }
+  .rentalHeader .rentalOwnerDetails .rentalOwnerRating {
+    font-size: 20px;
+    gap: 8px;
   }
 }
 .aboutBanner {
@@ -390,12 +364,16 @@ h2 {
   margin-bottom: 50px;
 }
 
-.aboutDesc {
+.aboutCollapse {
   display: flex;
   flex-direction: column;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+
+.aboutDesc {
   margin: auto;
   width: 80%;
-  margin-bottom: 30px;
 }
 .aboutDesc .aboutDescTitle {
   display: flex;
@@ -420,6 +398,7 @@ h2 {
   top: -1.2em;
   z-index: -1;
   animation: slideOut 0.3s ease-in-out both;
+  margin-bottom: -10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -428,6 +407,13 @@ h2 {
   }
   .aboutDesc {
     width: 100%;
+  }
+  .aboutDesc .aboutDescTitle {
+    font-size: 18px;
+    padding: 0.4em;
+  }
+  .aboutDesc .aboutDescTitle i {
+    font-size: 24px;
   }
 }
 .carroussel {

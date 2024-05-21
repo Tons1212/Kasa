@@ -6,22 +6,20 @@ function RentalDesc(props) {
     equipments: false,
   });
 
-  const toggleOpen = (section) => {
-    setIsOpen((prevOpen) => ({
-      ...prevOpen,
-      [section]: !prevOpen[section],
+  const openSlide = (section) => {
+    setIsOpen((slideOpen) => ({
+      ...slideOpen,
+      [section]: !slideOpen[section],
     }));
   };
 
   return (
     <div className="rentDescHeader">
-      <div className="rentalDesc">
-        <span
-          className="rentalDescTitle"
-          onClick={() => toggleOpen('description')}
-        >
+      <div className="rentalDescAndEquip">
+        <span className="rentalDescAndEquipTitle">
           Description
           <i
+            onClick={() => openSlide('description')}
             className={`fa-solid fa-chevron-${
               isOpen['description'] ? 'down' : 'up'
             }`}
@@ -29,13 +27,11 @@ function RentalDesc(props) {
         </span>
         {isOpen['description'] && <p>{props.description}</p>}
       </div>
-      <div className="rentalEquipements">
-        <span
-          className="rentalEquipementsTitle"
-          onClick={() => toggleOpen('equipments')}
-        >
+      <div className="rentalDescAndEquip">
+        <span className="rentalDescAndEquipTitle">
           Equipements
           <i
+            onClick={() => openSlide('equipments')}
             className={`fa-solid fa-chevron-${
               isOpen['equipments'] ? 'down' : 'up'
             }`}
